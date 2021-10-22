@@ -13,6 +13,10 @@
   --on-light-font-color-h: rgb(59, 59, 59);
   --dark-gray-variant-1: rgb(70, 70, 70);
   --on-dark-font-color: rgb(235, 235, 235);
+
+  
+  --bg-button-variant-mobile: rgb(155, 155, 155);
+  --bg-button-variant-desktop: rgb(74, 74, 74);
 }
 
 body {
@@ -56,6 +60,9 @@ p {
 
 
 /* Header */
+nav.mobile {
+  display: none;
+}
 nav {
     height: 64px;
     width: 100%;
@@ -119,8 +126,10 @@ button.start-here {
     margin-top: 24px;
     color: var(--on-dark-font-color);
     width: 100%;
-    background-color: var(--dark-gray-variant-1);
+    background-color: var(--bg-button-variant-desktop);
     align-content: center;
+    border: 0;
+    box-shadow: none;
 }
 
 
@@ -134,12 +143,11 @@ section.keep-practicing {
   flex-direction: row;
 }
 
-.kp-article-box{
+.kp-article-box-desktop {
   display: block;
   width: 60%;
   margin: 32px 24px;
   gap: 2rem;
-
 }
 
 p.kp-quote {
@@ -175,7 +183,10 @@ img.keep-practicing-img {
   cursor: pointer;
 }
 
-img.article-thumbnail {
+img.article-thumbnail-mobile {
+  display: none;
+}
+img.article-thumbnail-desktop {
   width: 35%;
   margin: 16px;
 }
@@ -195,6 +206,9 @@ img.article-thumbnail {
 
 
 /* Start learning Section */
+.courses-mobile {
+  display: none;
+}
 section.start-learning {
   background-color: var(--bg-nuance-2);
   padding: 32px 72px;
@@ -243,6 +257,9 @@ section.thesis-exhibit {
   width: 60%;
   gap: 2rem;
 
+}
+video.te-vid-mobile {
+  display: none;
 }
 video.te-vid {
   padding-right: 24px;
