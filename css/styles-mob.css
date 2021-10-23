@@ -7,15 +7,18 @@
 }
 
 :root {
-  --bg-nuance-1: rgb(219, 219, 219);
-  --bg-nuance-2: rgb(238, 238, 238);
+  --gray-variant-1: rgb(74, 74, 74);
+  --gray-variant-2: rgb(235, 235, 235);
+
+  --bg-nuance-1: rgb(215, 215, 215);
+  --bg-nuance-2: var(--gray-variant-2);
   --on-light-font-color-p: rgb(116, 116, 116);
-  --on-light-font-color-h: rgb(59, 59, 59);
-  --dark-gray-variant-1: rgb(70, 70, 70);
-  --on-dark-font-color: rgb(235, 235, 235);
+  --on-light-font-color-h: var(--gray-variant-1);
+  --dark-gray-variant-1: var(--gray-variant-1);
+  --on-dark-font-color: var(--gray-variant-2);
 
   --bg-button-variant-mobile: rgb(155, 155, 155);
-  --bg-button-variant-desktop: rgb(74, 74, 74);
+  --bg-button-variant-desktop: var(--gray-variant-1);
 }
 
 body {
@@ -58,7 +61,7 @@ p {
 
 
 
-/* Header */
+/* ----------------------------------------------------------------- Header */
 nav.desktop {
     display: none;
 }
@@ -71,15 +74,16 @@ nav.mobile {
   height: 64px;
 }
 img.nav-ic {
-  width: 64px;
-  padding: 12px;
-  height: 64px;
+  width: 48px;
+  padding: 4px;
+  height: 48px;
   cursor: pointer;
+  user-select: none;
 }
 
 
 
-/* Banner */
+/* ---------------------------------------------------------------- Banner */
 section.banner {
   width: 100%;
   background-color: var(--bg-nuance-1);
@@ -90,8 +94,6 @@ img.banner {
   width: 100%;
   height: auto;
 }
-
-
 .info {
   align-self: center;
   width: auto;
@@ -112,22 +114,21 @@ button.start-here {
     border: 0;
     box-shadow: none;
 }
+button.start-here:active {
+  background-color: var(--gray-variant-1);
+}
 
 
 
 
-
-/* Keep Practicing Section */
+/* ------------------------------------------------ Keep Practicing Section */
 section.keep-practicing {
   width: 100%;
   height: auto;
 }
-
 .kp-article-box-desktop{
   display: none;
 }
-
-
 .articles-container {
   display: flex;
   flex-flow: column nowrap;
@@ -135,18 +136,16 @@ section.keep-practicing {
   padding: 16px;
   gap: 32px;
 }
-
 .article-box {
   display: block;
+  user-select: none;
 }
-
 img.article-thumbnail-desktop {
   display: none;
 }
 img.article-thumbnail-mobile {
   width: 100%;
 }
-
 .article-info {
   width: 100%;
   display: flex;
@@ -158,25 +157,17 @@ img.article-thumbnail-mobile {
 
 
 
-
-
-
-
-
-/* Start learning Section */
+/* ------------------------------------------------- Start learning Section */
 section.start-learning {
   background-color: rgb(245, 244, 245);
   padding: 32px 16px;
 }
-
 h2.sl {
   text-align: center;
 }
-
 .sl-grid-container {
   display: none;
 }
-
 .courses-mobile {
   display: flex;
   flex-flow: column nowrap;
@@ -184,56 +175,40 @@ h2.sl {
   margin-top: 16px;
   border-bottom: 1px gray;
 }
-
 h3.course-mobile {
   padding: 24px 16px 16px 16px;
   background-color: #D8D8D8;
   align-content: center;
+  user-select: none;
 }
-
-.course-box{
-  background-color: white;
-}
-
-img.course {
-  height: auto;
-  width: 100%;
-}
-.course-info {
-  margin: 16px;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 8px;
+h3.course-mobile:active {
+  background-color: var(--bg-nuance-2);
 }
 
 
-
-/* Thesis Exhibit Section */
+/* ------------------------------------------------- Thesis Exhibit Section */
 section.thesis-exhibit {
   display: none;
 }
-
 h2.te {
   text-align: center;
   margin-top: 32px;
 }
-
-
 video.te-vid-mobile {
   margin-top: 16px;
   margin-bottom: 24px;
 }
 
-/* Footer */
+
+
+/* ----------------------------------------------------------------- Footer */
 footer {
   width: 100%;
   padding: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  te
 }
-
 ul.footer-nav {
   display: none;
 }

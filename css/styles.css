@@ -7,16 +7,19 @@
 }
 
 :root {
+  --gray-variant-1: rgb(74, 74, 74);
+  --gray-variant-2: rgb(235, 235, 235);
+
   --bg-nuance-1: rgb(215, 215, 215);
-  --bg-nuance-2: rgb(238, 238, 238);
+  --bg-nuance-2: var(--gray-variant-2);
   --on-light-font-color-p: rgb(116, 116, 116);
-  --on-light-font-color-h: rgb(59, 59, 59);
-  --dark-gray-variant-1: rgb(70, 70, 70);
-  --on-dark-font-color: rgb(235, 235, 235);
+  --on-light-font-color-h: var(--gray-variant-1);
+  --dark-gray-variant-1: var(--gray-variant-1);
+  --on-dark-font-color: var(--gray-variant-2);
 
   
   --bg-button-variant-mobile: rgb(155, 155, 155);
-  --bg-button-variant-desktop: rgb(74, 74, 74);
+  --bg-button-variant-desktop: var(--gray-variant-1);
 }
 
 body {
@@ -34,32 +37,30 @@ h2 {
   font-family: 'Red Hat Text', sans-serif;
   font-weight: 700;
   line-height: 2rem;
-  color: var(--on-light-font-color-h);
+  color: #4a4a4a;
 }
 h3 {
   font-family: 'Cambay', sans-serif;
   font-size: 1.25rem;
   line-height: 1.5rem;
-  color: var(--on-light-font-color-h);
+  color: var(--gray-variant-1);
 }
 a {
-  color:rgb(101, 187, 221);
+  color: #4a4a4a;
   text-decoration: none;
   cursor: pointer;
-  margin-top: 8px;
-  font-weight: bold;
 }
 p {
   font-family: 'Cambay', sans-serif;
   font-size: 1rem;
-  line-height: 1.2rem;
+  line-height: 1.4rem;
   color: var(--on-light-font-color-p);
 }
 
 
 
 
-/* Header */
+/* ----------------------------------------------------------- Header */
 nav.mobile {
   display: none;
 }
@@ -77,9 +78,19 @@ nav {
     display: inline-flex;
     align-items: center;
     margin-left: 24px;
+    cursor: pointer;
 }
 p.logo {
+  font-family: 'Red Hat Text', sans-serif;
   font-weight: normal;
+  font-size: 1.1rem;
+  user-select: none;
+}
+span.logo-span {
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: bold;
+  color: #4a4a4a;
+  font-size: 1.1rem;
 }
 ul.main-navig {
   margin-right: 16px;
@@ -87,16 +98,21 @@ ul.main-navig {
 li {
   display: inline;
   padding: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Cambay', sans-serif;
+  font-size: 1rem;
 }
-span.logo-span {
+li:hover {
+  color: var(--gray-variant-1);
   font-weight: bold;
-  color: #000;
 }
 
 
 
 
-/* Banner */
+
+/* ------------------------------------------------------------- Banner */
 section.banner {
   margin-top: 64px;
   width: 100%;
@@ -108,8 +124,6 @@ img.banner {
   height: auto;
   margin: 32px 24px;
 }
-
-
 .info {
   align-self: center;
   width: max(20%, 260px);
@@ -117,7 +131,7 @@ img.banner {
   margin-right: 8%;
 }
 h3.subtitle {
-  color: var(--on-light-font-color-p);
+  color: var(--gray-variant-1);
   margin-top: 24px;
 }
 button.start-here {
@@ -130,13 +144,17 @@ button.start-here {
     align-content: center;
     border: 0;
     box-shadow: none;
+    cursor: pointer;
+}
+button.start-here:hover {
+  background-color: var(--bg-button-variant-mobile);
 }
 
 
 
 
 
-/* Keep Practicing Section */
+/* ------------------------------------------------ Keep Practicing Section */
 section.keep-practicing {
   display: inline-flex;
   width: 100%;
@@ -146,15 +164,20 @@ section.keep-practicing {
 .kp-article-box-desktop {
   display: block;
   width: 60%;
-  margin: 32px 24px;
+  padding: 32px 24px;
   gap: 2rem;
+  user-select: none;
+  cursor: pointer;
 }
+.kp-article-box-desktop:hover {
+  background-color: var(--bg-nuance-1);
+}
+
 
 p.kp-quote {
   margin: 24px 0;
 }
 p.kp-author {
-  font-size: 0.8rem;
   font-weight: bolder;
 }
 
@@ -165,24 +188,24 @@ img.keep-practicing-img {
 }
 
 
-
 .articles-container {
   width: 40%;
   height: auto;
-  border-left: 1px solid var(--bg-nuance-1);
+  padding-top: 16px;
+  border-left: 2px solid var(--bg-nuance-2);
 }
-
 .article-box {
   display: inline-flex;
   flex-flow: row nowrap;
-  padding-top: 16px;
-  border-bottom: 1px solid var(--bg-nuance-1);
+  width: 100%;
+  border-bottom: 2px solid var(--bg-nuance-2);
+  cursor: pointer;
+  user-select: none;
+
 }
 .article-box:hover {
   background-color: var(--bg-nuance-1);
-  cursor: pointer;
 }
-
 img.article-thumbnail-mobile {
   display: none;
 }
@@ -190,7 +213,6 @@ img.article-thumbnail-desktop {
   width: 35%;
   margin: 16px;
 }
-
 .article-info {
   width: 65%;
   display: flex;
@@ -199,13 +221,17 @@ img.article-thumbnail-desktop {
   justify-content: center;
   gap: 0.5rem;
 }
+a.article-more {
+  color:rgb(101, 187, 221);
+  font-weight: bold;
+  margin-top: 8px;
+}
 
 
 
 
 
-
-/* Start learning Section */
+/* ------------------------------------------------ Start learning Section */
 .courses-mobile {
   display: none;
 }
@@ -228,6 +254,10 @@ h2.sl {
 
 .course-box{
   background-color: white;
+  cursor: pointer;
+}
+.course-box:hover {
+  background-color: var(--bg-nuance-1);
 }
 
 img.course {
@@ -243,7 +273,7 @@ img.course {
 
 
 
-/* Thesis Exhibit Section */
+/* ------------------------------------------------ Thesis Exhibit Section */
 section.thesis-exhibit {
   padding: 32px 24px;
   display: inline-flex;
@@ -275,9 +305,10 @@ h2.te {
 }
 
 .thesis-box {
+  width: 100%;
   display: inline-flex;
   flex-flow: row nowrap;
-  padding-top: 16px;
+  user-select: none;
 }
 .thesis-box:hover {
   background-color: var(--bg-nuance-1);
@@ -285,7 +316,7 @@ h2.te {
 }
 
 
-/* Footer */
+/* -------------------------------------------------------------- Footer */
 footer {
   width: 100%;
   padding: 16px 24px;
@@ -293,7 +324,7 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--bg-nuance-1);
+  border-top: 2px solid var(--bg-nuance-2);
 }
 
 ul.footer-nav {
